@@ -1,0 +1,121 @@
+/* classe só para mexer no menu, para não ficar com muita coisa no style*/
+
+.header nav ul{
+    display: flex;
+}
+
+.header nav ul li a{
+    font-size: 2rem;
+    font-weight: 500;
+    padding: 10px 30px;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.header nav ul li a:hover{
+    color: #fff;
+    background-color: coral;
+}
+
+/* RESPONSIVE */
+
+.header .menu{
+    display: none;
+    width: 60px;
+    height: 60px;
+    /* Alinhando ele no fim da linha (+ - isso */
+    align-self: flex-end;
+}
+
+.header nav label{
+    display: flex;
+    flex-direction: column;
+}
+
+/* Criando a linha do meio do hamburguer */
+.header .hamburguer{
+    background-color: #000;
+    position: relative;
+    display:block;
+    width: 30px;
+    height: 2px;
+    top: 29px;
+    left: 15px;
+    transition: 0.5s ease-in-out;
+}
+
+/* Criando as outras 2 linhas do hamburguer */
+.header .hamburguer::before,
+.header .hamburguer::after{
+    background-color: #000;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: 0.2s ease-in-out
+}
+/* fazendo com que a linha de baixo do hamburger suba, fazendo um efeito */
+.header .hamburguer:before{
+    top: -10px;
+}
+/* fazendo com que a linha de cimado hamburger suba, fazendo um efeito */
+.header .hamburguer:after{
+    bottom: -10px;
+}
+
+.header input{
+    display: none;
+}
+
+/*Quando o input estiver selecionado, vou no label .humburguer e rotaciono ele 45 graus*/
+.header input:checked ~ label .hamburguer{
+    transform: rotate(45deg);
+}
+
+/* primeira linha do hamburguer */
+.header input:checked ~ label .hamburguer:before{
+    transform: rotate(90deg);
+    top: 0;
+}
+/* segundaclinha do hamburguer, as duas linhas irão se unir para formar um X com a do meio*/
+.header input:checked ~ label .hamburguer:after{
+    transform: rotate(90deg);
+    bottom: 0;
+}
+
+/* estilizando o menu no celular */
+@media(max-width:900px){
+    .header .menu{
+        display: block;
+    }
+    /* Fazendo com que os menus do desktop sumam e fique só o ícone do hamburguer */
+    .header nav ul{
+        display: none;
+    }
+
+    /* Fazendo a ul aparecer no menu hamburguer */
+    .header input:checked ~ ul{
+        display: block;
+    }
+
+    .header nav{
+        position: absolute;
+        top: 8px;
+        right: 20px;
+        /* trazendo os itens do menu pra cima da página, como se tivesse criando uma camada por cima, para conseguirmos clicar no itens do menu */
+        z-index: 1;
+    }
+
+    .header nav ul{
+        width: 200px;
+        background-color: #fff;
+        padding: 20px;
+    }
+
+    .header nav ul a{
+        text-align: center;
+        padding: 20px;
+        display: block;
+    }
+}
