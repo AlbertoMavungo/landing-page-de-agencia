@@ -6,4 +6,4 @@ Gostaria estar compartilhando um projeto em que pude estar criando uma landing p
 
 1 - github pages: 
 
-2 - link para clone:
+2 - link para clone: https://github.com/AlbertoMavungo/landing-pagea-de-agencia.git
