@@ -1,6 +1,6 @@
 # Projeto Landing Page de Agência 
 
-Gostaria estar compartilhando um projeto em que pude estar criando uma landing page de de uma agência utilizando conceitos de display flex e grid juntos.
+Projeto em que pude estar criando uma landing page de uma agência utilizando conceitos de display flex e grid juntos.
 
 # Acessar o projeto
 
